@@ -77,14 +77,18 @@ WSGI_APPLICATION = "todo.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": get_safe_env("DATABASE_NAME"),
-        "USER": get_safe_env("DATABASE_USER"),
-        "PASSWORD": get_safe_env("DATABASE_PASSWORD"),
-        "HOST": get_safe_env("DATABASE_HOST"),
-        "PORT": get_safe_env("DATABASE_PORT"),
-    },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": get_safe_env("DATABASE_NAME"),
+    #     "USER": get_safe_env("DATABASE_USER"),
+    #     "PASSWORD": get_safe_env("DATABASE_PASSWORD"),
+    #     "HOST": get_safe_env("DATABASE_HOST"),
+    #     "PORT": get_safe_env("DATABASE_PORT"),
+    # },
 }
 
 
@@ -123,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = "/static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -154,16 +159,6 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Endpoints description for To Do App",
     "VERSION": "1.0.0",
     "SCHEMA_PATH_PREFIX": r"/api/",
-    # "APPEND_COMPONENTS": {
-    #     "securitySchemes": {
-    #         "ApiKeyAuth": {"type": "apiKey", "in": "header", "name": "Authorization"},
-    #     },
-    # },
-    # "SECURITY": [
-    #     {
-    #         "ApiKeyAuth": [],
-    #     },
-    # ],
     "PREPROCESSING_HOOKS": [
         "todo.utils.preprocessing_filter_spec",
     ],
