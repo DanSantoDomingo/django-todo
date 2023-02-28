@@ -86,6 +86,17 @@ django = ">=3.0"
 pytz = "*"
 
 [[package]]
+name = "djangorestframework-camel-case"
+version = "1.4.2"
+description = "Camel case JSON support for Django REST framework."
+category = "main"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "djangorestframework-camel-case-1.4.2.tar.gz", hash = "sha256:cdae75846648abb6585c7470639a1d2fb064dc45f8e8b62aaa50be7f1a7a61f4"},
+]
+
+[[package]]
 name = "drf-spectacular"
 version = "0.25.1"
 description = "Sane and flexible OpenAPI 3 schema generation for Django REST framework"
@@ -317,4 +328,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "24567974dd66b645e43873b792a9f72b93e2ac8b5d49c5f257f8f0b0ae4b8286"
+content-hash = "fc05401078694aa25b2ae1f606ae40b4f6eb112a7578b2f056ecf7c14a91969a"
