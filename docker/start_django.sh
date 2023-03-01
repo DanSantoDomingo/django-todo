@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Coreating .env file"
+echo "Creating .env file"
 cp ./todo/.env.template ./todo/.env
 
 echo "Running django migrations..."
