@@ -11,7 +11,7 @@ class ToDoItemViewSet(viewsets.ModelViewSet):
 
 
 class ToDoListViewSet(viewsets.ModelViewSet):
-    queryset = ToDoList.objects.all()
+    queryset = ToDoList.objects.all().select_related("owner").prefetch_related("todos")
     serializer_class = ToDoListSerializer
     permission_classes = [IsOwner, permissions.IsAuthenticated]
 
